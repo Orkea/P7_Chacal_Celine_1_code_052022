@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom"
 const Home = () => {
   return (
-    // eslint-disable-next-line react/no-unescaped-entities
-    <div>Page d'accueil 🏡</div>
+    <>
+      <div>Page d&apos;accueil 🏡</div>
+      <Link to="/fiche_logement/1"> Card</Link>
+    </>
   )
 }
 export default Home
