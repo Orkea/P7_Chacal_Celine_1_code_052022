@@ -1,6 +1,27 @@
-.header-container{
-    color: rgb(19, 226, 84);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    
+@use "../utils/variables" as *;
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  /* _Header */
+  position: absolute;
+  width: 1240px;
+  height: 68px;
+  left: 100px;
+  top: 40px;
+
+  &__navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 57px;
+    /* _Nav */
+    position: absolute;
+    left: 75.08%;
+    right: 0%;
+    top: 25%;
+    bottom: 25%;
+  }
+  &__link {
+    color: $color-primary;
+  }
 }

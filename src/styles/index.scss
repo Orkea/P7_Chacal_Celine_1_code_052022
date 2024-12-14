@@ -1,1 +1,14 @@
-@use "./components/header"
+@use "./utils/variables" as *;
+
+@use "./base/base";
+
+@use "./components/header";
+@use "./components/card";
+@use "./components/logo";
+@use "./components/footer";
+
+
+@use "./pages/home";
+
+/*----- Polices -----*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
