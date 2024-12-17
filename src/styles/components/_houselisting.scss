@@ -1,0 +1,22 @@
+.gallery-container {
+  /* Gallery */
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  width: 1240px;
+  left: 100px;
+  top: 437px;
+  background: #F6F6F6;
+  border-radius: 25px;
+
+    &__link {
+      border: solid 2px black;
+      border-radius: 25px;
+      width: 340px;
+      height: 340px;
+      margin: 10px;
+    }
+
+}

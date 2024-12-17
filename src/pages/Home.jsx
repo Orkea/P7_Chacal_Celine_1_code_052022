@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom"
+
+import HousingList from "../components/HousingList"
+import HomePicture from "../assets/Home-picture.png"
+
 const Home = () => {
   return (
     <>
-      <div className="home-container">Page d&apos;accueil 🏡</div>
-      <Link to="/fiche_logement/1" className="card-container"> Card</Link>
+      <main className="main-container">
+        <section className="picture">
+          <h1 className="picture__text"> Chez vous, partout et ailleurs</h1>
+          <img src={HomePicture} alt="Image de la page d'accueil" />
+        </section>
+          <HousingList />
+      </main>
     </>
   )
 }

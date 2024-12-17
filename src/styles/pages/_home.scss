@@ -1,9 +1,36 @@
-.home-container{
-    /* _Body */
-    position: absolute;
-    width: 1240px;
-    height: 1095px;
-    left: 100px;
-    top: 171px;
+.main-container {
+  /* _Body */
+  position: absolute;
+  width: 1240px;
+  height: 1095px;
+  left: 100px;
+  top: 171px;
 }
 
+.picture {
+  position: relative;
+  display: inline-block;
+  width: 1240px;
+  height: 223px;
+  left: 100px;
+  border-radius: 25px;
+ 
+  border: 2px solid;
+  background: cover right gray;
+  overflow: hidden;
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: blueviolet;
+    margin: auto;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
