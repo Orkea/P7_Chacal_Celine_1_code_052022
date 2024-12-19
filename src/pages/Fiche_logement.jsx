@@ -1,34 +1,41 @@
 import { useParams } from "react-router-dom"
-// import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 const Fiche_logement = () => {
   const { id } = useParams()
   // const [house, setHouse] = useState(null)
   // const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   setLoading(true)
-  //   const fetchHouse = async () => {
-  //     try {
-  //       const res = await fetch(`http://localhost:5173/data/logements`)
-  //       const data = await res.json()
-  //       console.log(data)
-  //     } catch (error) {
-  //       console.log("Erreur fecthing data", error)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-  //   fetchHouse()
-  // }, [])
+  useEffect(() => {
+   
+    const fetchHouse = async () => {
+      try {
+        const res = await fetch(`http://localhost:5173/src/data/logements.json`)
+        const data = await res.json()
+        console.log("DATA de la response",data)
+      } catch (error) {
+        console.log("Erreur fecthing data", error)
+      } finally {
+        console.log("DATA RECUPERER")
+      }
+    }
+    fetchHouse()
+  }, [])
 
-  // useEffect(()=>{
-  //   fetch(`http://localhost:5173/data/logements`)
-  //   .then((response) => response.json()
-  //   .then(({ Data }) => console.log(Data))
-  //   .catch((error) => console.log(error))
-  // )
-  // }, [])
+  // useEffect(() => {
+
+  //   fetch(`http://localhost:5173/src/data/logements`)
+  //     .then((response) => {
+  //       console.log("Statut de la réponse :", response.status);
+  //       console.log("RESPONSE JSON", response.json())
+  //       return response.text(); // Changez temporairement en .text() pour voir la réponse brute
+  //     })
+  //     .then((data) => {
+  //       console.log("REPONSE BRUTE:", data);
+  //     })
+  //     .catch((error) => console.log("Erreur :", error));
+  // }, []);
+  
 
   return <div> La Fiche_logement {id}</div>
 }
