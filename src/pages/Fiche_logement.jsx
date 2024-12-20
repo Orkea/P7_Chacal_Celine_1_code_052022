@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
+import Loader from "../components/Loader.jsx" /* chemin à verifier*/
 
 const Fiche_logement = () => {
   const { id } = useParams()
   const [houseData, setData] = useState(null);
-  // const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
    
@@ -20,7 +21,7 @@ const Fiche_logement = () => {
         console.log("Erreur fecthing data", error)
       } finally {
         console.log("DATA RECUPERER")
-        // setLoading(false)
+        setLoading(false)
       }
     }
     fetchHouse()
@@ -41,6 +42,12 @@ const Fiche_logement = () => {
   // }, []);
   
 
-  return <div> La Fiche_logement {id}</div>
-}
+  return <div> 
+      {isloading ? (
+          <Loader />
+      ) : (
+          
+     <div>La Fiche_logement {id}</div>
+      )}
+  </div>
 export default Fiche_logement
