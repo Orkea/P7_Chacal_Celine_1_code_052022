@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 const Fiche_logement = () => {
   const { id } = useParams()
-  // const [house, setHouse] = useState(null)
+  const [houseData, setData] = useState(null);
   // const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -11,16 +11,20 @@ const Fiche_logement = () => {
     const fetchHouse = async () => {
       try {
         const res = await fetch(`http://localhost:5173/src/data/logements.json`)
-        const data = await res.json()
-        console.log("DATA de la response",data)
+        const houseData = await res.json()
+         const filteredData = houseData.find((item) => item.id === parseInt(id));
+        console.log("DATA de la response", houseData)
+        console.log("DATA pour un logement", filteredData)
+       setData(filteredData);
       } catch (error) {
         console.log("Erreur fecthing data", error)
       } finally {
         console.log("DATA RECUPERER")
+        // setLoading(false)
       }
     }
     fetchHouse()
-  }, [])
+  }, [id])
 
   // useEffect(() => {
 
