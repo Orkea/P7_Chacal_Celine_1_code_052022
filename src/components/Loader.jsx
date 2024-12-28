@@ -1,6 +1,6 @@
 const Loader = () => {
   return (
-    <div>Loader spinner</div>
+    <div>Loader uptaded</div>
   )
 }
 export default Loader

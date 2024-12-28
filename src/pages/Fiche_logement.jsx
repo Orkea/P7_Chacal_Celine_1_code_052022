@@ -1,35 +1,37 @@
 import { useParams } from "react-router-dom"
-import { useEffect } from "react"
-import Loader from "../components/Loader.jsx" /* chemin à verifier*/
+import { useEffect, useState } from "react"
+import Loader from "../components/Loader" /* chemin à verifier*/
 
 const Fiche_logement = () => {
   const { id } = useParams()
-  const [houseData, setData] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState({})
+  const [isloading, setLoading] = useState(true)
 
   useEffect(() => {
-   
     const fetchHouse = async () => {
       try {
         const res = await fetch(`http://localhost:5173/src/data/logements.json`)
         const houseData = await res.json()
-         const filteredData = houseData.find((item) => item.id === parseInt(id));
-        console.log("DATA de la response", houseData)
+        /* On filter pour trouver les info du logement passer en id*/
+        const filteredData = houseData.find((item) => item.id === id)
+        console.log("affichage du contenu de DATA", data)
+        console.log("DATA de la response de l'API", houseData)
         console.log("DATA pour un logement", filteredData)
-       setData(filteredData);
+        setData(filteredData)
       } catch (error) {
         console.log("Erreur fecthing data", error)
       } finally {
-        console.log("DATA RECUPERER")
         setLoading(false)
       }
     }
     fetchHouse()
-  }, [id])
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
   // useEffect(() => {
 
-  //   fetch(`http://localhost:5173/src/data/logements`)
+  //   fetch(`http://localhost:5173/src/data/logements.json`)
   //     .then((response) => {
   //       console.log("Statut de la réponse :", response.status);
   //       console.log("RESPONSE JSON", response.json())
@@ -40,14 +42,7 @@ const Fiche_logement = () => {
   //     })
   //     .catch((error) => console.log("Erreur :", error));
   // }, []);
-  
 
-  return <div> 
-      {isloading ? (
-          <Loader />
-      ) : (
-          
-     <div>La Fiche_logement {id}</div>
-      )}
-  </div>
+  return <div>{isloading ? <Loader /> : <div>La Fiche_logement {id}</div>}</div>
+}
 export default Fiche_logement
