@@ -10,7 +10,6 @@ const HousingList = () => {
           <div className="gallery-card">
             <img src={house.cover} alt={house.title} className="gallery-card__img"/>
             <p className="gallery-card__title">{house.title}</p>
-            
           </div>
         </Link>
       ))}

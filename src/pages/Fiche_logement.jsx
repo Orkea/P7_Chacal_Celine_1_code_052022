@@ -1,23 +1,24 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import Loader from "../components/Loader" /* chemin à verifier*/
+import Loader from "../components/Loader"
+import House from "../components/House"
 
 const Fiche_logement = () => {
   const { id } = useParams()
-  const [data, setData] = useState({})
+  const [houses, setHouses] = useState([])
   const [isloading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchHouse = async () => {
       try {
         const res = await fetch(`http://localhost:5173/src/data/logements.json`)
-        const houseData = await res.json()
-        /* On filter pour trouver les info du logement passer en id*/
-        const filteredData = houseData.find((item) => item.id === id)
-        console.log("affichage du contenu de DATA", data)
-        console.log("DATA de la response de l'API", houseData)
-        console.log("DATA pour un logement", filteredData)
-        setData(filteredData)
+        const houses = await res.json()
+
+        console.log("DATA de la response de l'API  ____Stocker dans HOUSES", houses)
+        // /* On filter pour trouver les info du logement passer en useParams*/
+        // const filteredData = housesData.find((house) => house.id === id)
+        // 
+        setHouses(houses)
       } catch (error) {
         console.log("Erreur fecthing data", error)
       } finally {
@@ -25,24 +26,32 @@ const Fiche_logement = () => {
       }
     }
     fetchHouse()
-  
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  // useEffect(() => {
-
-  //   fetch(`http://localhost:5173/src/data/logements.json`)
-  //     .then((response) => {
-  //       console.log("Statut de la réponse :", response.status);
-  //       console.log("RESPONSE JSON", response.json())
-  //       return response.text(); // Changez temporairement en .text() pour voir la réponse brute
-  //     })
-  //     .then((data) => {
-  //       console.log("REPONSE BRUTE:", data);
-  //     })
-  //     .catch((error) => console.log("Erreur :", error));
-  // }, []);
-
-  return <div>{isloading ? <Loader /> : <div>La Fiche_logement {id}</div>}</div>
+  // On filter pour trouver les info du logement passer en useParams
+  const house = houses.find((house) => house.id === id)
+  console.log("DATA pour un logement", house)
+  return (
+    
+    <>
+    {isloading ? <Loader /> : 
+  
+     <div>
+      <House 
+      title={house.title} 
+      cover={house.cover}
+      pictures={house.pictures}
+      description={house.description}
+      host={house.host}
+      rating={house.rating}
+      location={house.location}
+      equipments={house.equipments}
+      tags={house.tags}
+      />
+    </div>
+    }
+    </>
+    
+  )
 }
 export default Fiche_logement

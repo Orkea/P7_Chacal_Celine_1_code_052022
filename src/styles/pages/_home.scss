@@ -14,7 +14,6 @@
   height: 223px;
   left: 100px;
   border-radius: 25px;
- 
   border: 2px solid;
   background: cover right gray;
   overflow: hidden;
@@ -24,14 +23,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: blueviolet;
+    color: white;
     margin: auto;
   }
 
   img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   
 }

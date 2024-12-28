@@ -1,6 +1,6 @@
 const Loader = () => {
   return (
-    <div>Loader uptaded</div>
+    <div>Loading data</div>
   )
 }
 export default Loader
