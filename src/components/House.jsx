@@ -1,7 +1,11 @@
 import PropTypes from "prop-types"
+import{ useState } from "react"
+import VectorBack from "../assets/vector-back.png"
+import VectorForward from "../assets/vector-forward.png"
+
+
 const House = ({
   title,
-  cover,
   pictures,
   description,
   host,
@@ -10,11 +14,29 @@ const House = ({
   equipments,
   tags,
 }) => {
-  console.log("Tableau de images", pictures)
+  
+  const [indexPicture, updateIndexPicture] = useState(0)
+  console.log("====== Index de l'image ======", indexPicture + "  ======= Image actuelle ======", pictures[indexPicture])
+  const indexPreviousPicture = indexPicture === 0 ? (pictures.length-1) : indexPicture - 1 
+  console.log("===Image PRECEDENTE ====", pictures[indexPreviousPicture])
+  const indexNextPicture = indexPicture === (pictures.length-1) ? 0 : indexPicture + 1
+  console.log("===Image suivante ====", pictures[indexNextPicture])
   return (
     <div>
       <div className="carrousel">
-        <img src={cover} alt={title} />
+        <div className="carrousel__arrow carrousel__arrow--back">
+          <button className="carousel__vector"  onClick={() => updateIndexPicture(indexPreviousPicture)}>
+            <img src={VectorBack} alt="Image précédente" />
+          </button>
+        </div>
+        <div className="carrousel__arrow carrousel__arrow--foward">
+          <button className="carousel__vector" onClick={() => updateIndexPicture(indexNextPicture)}>
+            <img src={VectorForward} alt="Image suivante" />
+          </button>
+        </div>
+
+        <img className="carrousel__pictures" src={pictures[indexPicture]} alt={title} />
+
       </div>
       <h2 className="house-title">{title}</h2>
       <h3 className="house-location">{location}</h3>
@@ -52,11 +74,10 @@ const House = ({
 }
 House.propTypes = {
   title: PropTypes.string.isRequired,
-  cover: PropTypes.string,
   pictures: PropTypes.array,
   description: PropTypes.string.isRequired,
-  host: PropTypes.string,
-  rating: PropTypes.number,
+  host: PropTypes.object,
+  rating: PropTypes.string,
   location: PropTypes.string.isRequired,
   equipments: PropTypes.array,
   tags: PropTypes.array,
