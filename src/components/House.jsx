@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
-import{ useState } from "react"
-import VectorBack from "../assets/vector-back.png"
-import VectorForward from "../assets/vector-forward.png"
+import { useState } from "react"
 
+import VectorUp from "../assets/vector-up.png"
+import Carrousel from "./Carrousel"
 
 const House = ({
   title,
@@ -14,30 +14,12 @@ const House = ({
   equipments,
   tags,
 }) => {
-  
-  const [indexPicture, updateIndexPicture] = useState(0)
-  console.log("====== Index de l'image ======", indexPicture + "  ======= Image actuelle ======", pictures[indexPicture])
-  const indexPreviousPicture = indexPicture === 0 ? (pictures.length-1) : indexPicture - 1 
-  console.log("===Image PRECEDENTE ====", pictures[indexPreviousPicture])
-  const indexNextPicture = indexPicture === (pictures.length-1) ? 0 : indexPicture + 1
-  console.log("===Image suivante ====", pictures[indexNextPicture])
+
+  const[isDescriptionShow, updateIsDescriptionShow] = useState(true)
+
   return (
     <div>
-      <div className="carrousel">
-        <div className="carrousel__arrow carrousel__arrow--back">
-          <button className="carousel__vector"  onClick={() => updateIndexPicture(indexPreviousPicture)}>
-            <img src={VectorBack} alt="Image précédente" />
-          </button>
-        </div>
-        <div className="carrousel__arrow carrousel__arrow--foward">
-          <button className="carousel__vector" onClick={() => updateIndexPicture(indexNextPicture)}>
-            <img src={VectorForward} alt="Image suivante" />
-          </button>
-        </div>
-
-        <img className="carrousel__pictures" src={pictures[indexPicture]} alt={title} />
-
-      </div>
+      <Carrousel pictures={pictures} title={title} />
       <h2 className="house-title">{title}</h2>
       <h3 className="house-location">{location}</h3>
       <div className="house__content">
@@ -57,10 +39,16 @@ const House = ({
           <img src={host.picture} alt={host.name} />
         </div>
       </div>
-      <div className="house-description dropdown-open">
+      <div className="dropdown dropdown--open">
+        <div className="dropdown--close">
         <h3>Description</h3>
-        {description}
+        <button className="dropdown__button dropdown__button--up" onClick={() => updateIsDescriptionShow(!isDescriptionShow)}>
+          <img src={VectorUp} alt="Fleche vers le haut" />
+        </button>
+        </div>
+        {isDescriptionShow && <p >{description}</p>}
       </div>
+
       <div className="house-equipments">
         <h3>Equipements</h3>
         <ul>
