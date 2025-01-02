@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
-import { useState } from "react"
+// import { useState } from "react"
 
-import VectorUp from "../assets/vector-up.png"
 import Carrousel from "./Carrousel"
+import Collapse from "./Collapse"
 
 const House = ({
   title,
@@ -15,7 +15,7 @@ const House = ({
   tags,
 }) => {
 
-  const[isDescriptionShow, updateIsDescriptionShow] = useState(true)
+  // const[isDescriptionShow, updateIsDescriptionShow] = useState(true)
 
   return (
     <div>
@@ -39,7 +39,7 @@ const House = ({
           <img src={host.picture} alt={host.name} />
         </div>
       </div>
-      <div className="dropdown dropdown--open">
+      {/* <div className="dropdown dropdown--open">
         <div className="dropdown--close">
         <h3>Description</h3>
         <button className="dropdown__button dropdown__button--up" onClick={() => updateIsDescriptionShow(!isDescriptionShow)}>
@@ -47,16 +47,21 @@ const House = ({
         </button>
         </div>
         {isDescriptionShow && <p >{description}</p>}
-      </div>
+      </div> */}
 
-      <div className="house-equipments">
+      <Collapse element={description} name="Description" />
+      <Collapse element={equipments} name="Equipements"/>
+
+      {/* <div className="house-equipments">
         <h3>Equipements</h3>
         <ul>
           {equipments.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
+              <li key={index}>
+                {equipment}
+              </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   )
 }

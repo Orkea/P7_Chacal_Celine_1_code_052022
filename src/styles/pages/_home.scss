@@ -1,6 +1,5 @@
 .main-container {
   /* _Body */
-  position: absolute;
   width: 1240px;
   height: 1095px;
   left: 100px;
@@ -8,30 +7,67 @@
 }
 
 .picture {
-  position: relative;
-  display: inline-block;
+  /* _Section 1 */
+
+  position: absolute;
   width: 1240px;
   height: 223px;
   left: 100px;
+  top: 171px;
   border-radius: 25px;
-  background: cover right gray;
   overflow: hidden;
+
+  &__maskgroup {
+    /* Mask Group */
+    width: 1240px;
+    height: 223px;
+    top: 171px;
+    left: 100px;
+    opacity: 0.3;
+    border-radius: 25px;
+
+    /* Background */
+    background: #000000;
+    mix-blend-mode: darken;
+  }
   &__text {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // text-align: left;
+    // color: white;
+    // font-size: 48px;
+    // font-weight: 500;
+    // line-height: 68.45px;
+    // text-underline-position: from-font;
+    // text-decoration-skip-ink: none;
+
+    /* Chez vous, partout et ailleurs */
+
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    margin: auto;
+    left: 25.9%;
+    right: 25.14%;
+    top: 24.32%;
+    bottom: 69.04%;
+
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 142.6%;
+    /* or 68px */
+    display: flex;
+    align-items: flex-end;
+
+    color: #ffffff;
   }
 
-  img {
+  &__img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
-  
 }

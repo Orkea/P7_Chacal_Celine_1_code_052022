@@ -11,8 +11,6 @@ const Carrousel = ({ pictures, title }) => {
     indexPicture === pictures.length - 1 ? 0 : indexPicture + 1
   const positionPicture = indexPicture + 1
   const totalPictures = pictures.length  
-
-   console.log("====== Numero de la photo ======", positionPicture + "/" + totalPictures) 
   return (
     <div>
       <div className="carrousel">
@@ -32,11 +30,13 @@ const Carrousel = ({ pictures, title }) => {
             <img src={VectorForward} alt="Image suivante" />
           </button>
         </div>
+        
         <img
           className="carrousel__pictures"
           src={pictures[indexPicture]}
           alt={title}
         />
+       {/* Ici, on affiche le numéro de la photo actuelle et le nombre total de photos */} 
         <p className="carrousel__pagination">{positionPicture + "/" + totalPictures}</p>
       </div>
     </div>
