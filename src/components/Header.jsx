@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
-import LogoGroup from "./Logo.jsx"
+import logo from '../assets/logo.svg'
 
 const Header = () => {
   return (
-    <div className="header-container">
-      <LogoGroup/>
-      <nav className="header-container__navbar">
-        <Link to="/" className="header-container__link">Accueil</Link>
-        <Link to="a_propos" className="header-container__link"> A Propos</Link>
+    <div className="header">
+      <nav className="header__navbar">
+        <Link to="/" className="header__link">Accueil</Link>
+        <Link to="a_propos" className="header__link"> A Propos</Link>
       </nav>
+      <img src={logo} alt="logo" className="header__logo"/>
     </div>
   )
 }

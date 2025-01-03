@@ -1,9 +1,8 @@
-@use "./utils/variables" as *;
+@use "./utils/mixins" as *;
 
 @use "./base/base";
 
 @use "./components/header";
-@use "./components/logo";
 @use "./components/houselisting";
 @use "./components/caroussel";
 @use "./components/house";

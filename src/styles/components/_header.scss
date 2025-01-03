@@ -1,9 +1,9 @@
 @use "../utils/variables" as *;
 
-.header-container {
+.header{
+  /* _Header */
   display: flex;
   justify-content: space-between;
-  /* _Header */
   position: absolute;
   width: 1240px;
   height: 68px;
@@ -11,13 +11,12 @@
   top: 40px;
 
   &__navbar {
+    /* _Nav */
     display: flex;
     justify-content: flex-end;
     gap: 57px;
-    /* _Nav */
     position: absolute;
     left: 75.08%;
-    right: 0%;
     top: 25%;
     bottom: 25%;
   }
@@ -25,3 +24,5 @@
     color: $color-primary;
   }
 }
+
+
