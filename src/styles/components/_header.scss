@@ -1,6 +1,7 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
-.header{
+.header {
   /* _Header */
   display: flex;
   justify-content: space-between;
@@ -14,15 +15,37 @@
     /* _Nav */
     display: flex;
     justify-content: flex-end;
-    gap: 57px;
     position: absolute;
     left: 75.08%;
+    right: 0%;
     top: 25%;
     bottom: 25%;
+    gap: 57px;
   }
   &__link {
     color: $color-primary;
+    @include navlink;
+  }
+  &__accueil {
+    /* Accueil */
+    width: 136px;
+    height: 34px;
+    text-align: right;
+
+    // /* or 34px */
+    // display: flex;
+    // align-items: flex-end;
+    // text-align: right;
+    // text-decoration-line: underline;
+  }
+  &__a_propos {
+    /* A Propos */
+    width: 116px;
+    height: 34px;
+
+    // /* or 34px */
+    // display: flex;
+    // align-items: flex-end;
+    // text-align: right;
   }
 }
-
-
