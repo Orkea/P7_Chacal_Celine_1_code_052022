@@ -1,14 +1,22 @@
-@use "./utils/mixins" as *;
-
 @use "./base/base";
 
 @use "./components/header";
+@use "./components/banner";
 @use "./components/houselisting";
 @use "./components/caroussel";
+@use "./components/collapse";
 @use "./components/house";
 @use "./components/footer";
 
 @use "./pages/home";
+@use "./pages/a_propos";
 
 /*----- Polices -----*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1240px;
+  margin: 40px auto;
+}

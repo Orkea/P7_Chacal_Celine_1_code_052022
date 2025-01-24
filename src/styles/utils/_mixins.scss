@@ -1,5 +1,6 @@
+@use "../utils/variables" as *;
+
 @mixin navlink {
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -8,4 +9,32 @@
   &:hover {
     text-decoration-line: underline;
   }
+}
+
+@mixin flex_column{
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin bannertitle{
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 142.6%;
+  /* or 68px */
+  // display: flex;
+  // align-items: flex-end;
+
+  color: $color-secondary;
+}
+
+
+@mixin typo_collapse{
+font-size: 18px;
+font-weight: 400;
+line-height: 25.67px;
+text-align: left;
+text-decoration-skip-ink: none;
+color: $color-primary;
 }

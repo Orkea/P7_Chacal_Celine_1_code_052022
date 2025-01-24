@@ -5,6 +5,7 @@ import houses from "../data/logements.json"
 const HousingList = () => {
   return (
     <div className="gallery">
+      <div className="gallery__container">
       {houses.map((house, index) => (
         <Link to={`/fiche_logement/${house.id}`} key={`${house}${index}`} className="gallery__link">
           <div className="gallery-card">
@@ -13,6 +14,8 @@ const HousingList = () => {
           </div>
         </Link>
       ))}
+
+      </div>
     </div>
   )
 }

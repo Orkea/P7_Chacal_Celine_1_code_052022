@@ -1,91 +1,86 @@
-.house-title {
-  position: absolute;
-  width: 635px;
-  height: 51px;
-  top: 573px;
-  left: 100px;
-  color: #ff6060;
-  font-weight: 51.34 px;
-}
-.house-location {
-  /* Paris, Île-de-France */
-  width: 176px;
-  height: 26px;
-  top: 624px;
-  left: 100px;
-  position: absolute;
-  left: 6.94%;
-  right: 80.83%;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 142.6%;
-  /* identical to box height, or 26px */
-  display: flex;
-  align-items: flex-end;
+@use "../utils/variables" as *;
 
-  color: #ff6060;
-}
 
-.house__content {
-  position: absolute;
-  width: 1240px;
-  height: 101px;
-  top: 670px;
-  left: 100px;
-  gap: 0px;
-  opacity: 0px;
-}
-.dropdown {
+  .house__title {
+    width: 635px;
+    height: 77px;
+    h2 {
+      width: 635px;
+      height: 51px;
+      margin: 0;
+      color: $color-primary;
+      font-family: Montserrat;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 51.34px;
+      text-align: left;
+    }
+    h3 {
+      /* Paris, Île-de-France */
+
+      height: 26px;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25.67px;
+      text-align: left;
+      /* identical to box height, or 26px */
+      color: $color-primary;
+    }
+  }
+  
+.house-content {
   display: flex;
   flex-direction: column;
-  &--open {
-    /* .dropdown-open */
-    position: relative;
-    width: 582px;
-    height: 249px;
-    top: 650px;
-    left: 100px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  &--close {
-    /* .dropdown-close */
-    width: 582px;
-    height: 52px;
-    top: 557px;
-    left: 675px;
-    border-radius: 10px;
-    background-color: #ff6060;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  h3 {
-    /* Équipements */
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142.6%;
-    /* identical to box height, or 26px */
-    color: #ffffff;
-    background-color: #ff6060;
-  }
-  &__button{
-    background: transparent;
-    border: none;
-  }
-}
-.house-equipments {
-  position: absolute;
   width: 1240px;
   height: 101px;
-  top: 1300px;
-  left: 100px;
-  gap: 0px;
-  opacity: 0px;
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    &--item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25px;
+      border-radius: 10px;
+      margin: 0 10px 10px 0;
+      padding: 5px;
+      color: $color-secondary;
+      background-color: $color-primary;
+      span {
+        display: block;
+        margin: 0 30px;
+      }
+    }
+  }
+  &__collapse {
+    display: flex;
+    flex-direction: row;
+    height: 47px;
+    row-gap: 50px;
+    justify-content: space-between;
+  }
+}
+
+.house-aside {
+  display: flex;
+  flex-direction: column;
+  width: 196px;
+  position: absolute;
+  top: 567px;
+  right: 0;
+
+  &__host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p{
+      text-align: right;
+    }
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+  }
 }

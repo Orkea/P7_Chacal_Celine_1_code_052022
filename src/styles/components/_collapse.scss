@@ -1,0 +1,76 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as*;
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  &--open {
+    /* .dropdown-open */
+    position: relative;
+    width: 582px;
+    height: 249px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    &__text {
+      position: absolute;
+      width: 582px;
+      height: 249px;
+      top: 42px;
+      border-radius: 10px;
+      z-index: -1;
+      background-color: $background-gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      width: 550px;
+      height: 156px;
+      @include typo_collapse
+    }
+
+    ul {
+      width: 550px;
+      height: 156px;
+      list-style-type: none;
+      padding: 0;
+      @include typo_collapse
+    }
+  }
+  &--close {
+    /* .dropdown-close */
+    width: 582px;
+    height: 52px;
+    left: 675px;
+    border-radius: 10px;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h3 {
+    /* Équipements */
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+    /* identical to box height, or 26px */
+    color: $color-secondary;
+    background-color: $color-primary;
+  }
+  &__button {
+    background: transparent;
+    border: none;
+  }
+}
+.house-equipments {
+  position: absolute;
+  width: 1240px;
+  height: 101px;
+  top: 1300px;
+  left: 100px;
+  gap: 0px;
+  opacity: 0px;
+}

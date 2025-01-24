@@ -1,20 +1,22 @@
-
 import HousingList from "../components/HousingList"
+import Banner from "../components/Banner"
 import HomePicture from "../assets/Home-picture.png"
 
 const Home = () => {
   return (
-    <>
       <main className="main-container">
-        <section className="picture">
-          <div className="picture__maskgroup">
-          <h1 className="picture__text"> Chez vous, partout et ailleurs</h1>
-          <img src={HomePicture} alt="Image de la page d'accueil" className="picture__img"/>
+        <Banner>
+          <div className="banner__text">
+            <h1> Chez vous, partout et ailleurs</h1>
           </div>
-        </section>
-          <HousingList />
+          <img
+            src={HomePicture}
+            alt="Image de la page d'accueil"
+            className="banner__img"
+          />
+        </Banner>
+        <HousingList />
       </main>
-    </>
   )
 }
 export default Home

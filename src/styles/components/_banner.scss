@@ -1,0 +1,16 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.maskgroup {
+  /* Mask Group */
+  height: 223px;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__img {
+  filter: brightness(0.7);
+}

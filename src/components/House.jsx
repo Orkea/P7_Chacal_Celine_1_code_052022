@@ -1,6 +1,4 @@
 import PropTypes from "prop-types"
-// import { useState } from "react"
-
 import Carrousel from "./Carrousel"
 import Collapse from "./Collapse"
 
@@ -14,55 +12,43 @@ const House = ({
   equipments,
   tags,
 }) => {
-
-  // const[isDescriptionShow, updateIsDescriptionShow] = useState(true)
+  const identity = host.name.split(" ")
+  const firstName = identity[0]
+  const lastName = identity[1]
 
   return (
-    <div>
+    <main>
       <Carrousel pictures={pictures} title={title} />
-      <h2 className="house-title">{title}</h2>
-      <h3 className="house-location">{location}</h3>
-      <div className="house__content">
-        <div className="house-tags">
-          <h3>Tags</h3>
+      <div className="house__title">
+        <h2>{title}</h2>
+        <h3>{location}</h3>
+      </div>
+      <div className="house-content">
+        <div className="house-content__tags">
           {tags.map((tag, index) => (
-            <span key={index}>{tag}</span>
+            <div key={`${tag}-${index}`} className="house-content__tags--item">
+              <span>{tag}</span>
+            </div>
           ))}
-          <div className="house-rating">
-            <h3>Rating</h3>
-            <span>{rating}/5</span>
-          </div>
         </div>
-        <div className="house-host">
-          <h3>Host</h3>
-          <p>{host.name}</p>
-          <img src={host.picture} alt={host.name} />
+        <div className="house-content__collapse">
+          <Collapse element={description} title="Description" />
+          <Collapse element={equipments} title="Equipements" />
         </div>
       </div>
-      {/* <div className="dropdown dropdown--open">
-        <div className="dropdown--close">
-        <h3>Description</h3>
-        <button className="dropdown__button dropdown__button--up" onClick={() => updateIsDescriptionShow(!isDescriptionShow)}>
-          <img src={VectorUp} alt="Fleche vers le haut" />
-        </button>
+      <aside className="house-aside">
+        <div className="house-aside__host">
+          <p>
+            {firstName} <br />
+            {lastName}
+          </p>
+          <img src={host.picture} alt={host.name} />
         </div>
-        {isDescriptionShow && <p >{description}</p>}
-      </div> */}
-
-      <Collapse element={description} name="Description" />
-      <Collapse element={equipments} name="Equipements"/>
-
-      {/* <div className="house-equipments">
-        <h3>Equipements</h3>
-        <ul>
-          {equipments.map((equipment, index) => (
-              <li key={index}>
-                {equipment}
-              </li>
-          ))}
-        </ul>
-      </div> */}
-    </div>
+        <div className="house-rating">
+          <span>{rating}/5</span>
+        </div>
+      </aside>
+    </main>
   )
 }
 House.propTypes = {

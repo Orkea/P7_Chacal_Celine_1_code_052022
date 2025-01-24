@@ -16,6 +16,7 @@ import Footer from "./components/Footer.jsx"
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
+      <div className="container">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/fiche_logement/:id" element={<Fiche_logement />}/>
         <Route path="*" element={<Error />} />
       </Routes>
+      </div>
       <Footer />
     </Router>
   </StrictMode>
