@@ -1,68 +1,81 @@
 @use "../utils/variables" as *;
-@use "../utils/mixins" as*;
+@use "../utils/mixins" as *;
+@use "../utils/keyframes" as *;
 
 .dropdown {
   display: flex;
   flex-direction: column;
-  &--open {
-    /* .dropdown-open */
-    position: relative;
-    width: 582px;
-    height: 249px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    &__text {
-      position: absolute;
-      width: 582px;
-      height: 249px;
-      top: 42px;
-      border-radius: 10px;
-      z-index: -1;
-      background-color: $background-gray;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    p {
-      width: 550px;
-      height: 156px;
-      @include typo_collapse
-    }
+  width: 582px;
+  max-height: 52px;
+  border-radius: 10px;
+  transition: max-height 4s ease-in-out;
 
+  &--open {
+    width: 582px;
+    max-height: 500px;
+    transition: max-height 4s ease-in-out;
+  }
+  &__text {
+    position: relative;
+    top: -10px;
+    border-radius: 10px;
+    z-index: -1;
+    background-color: $background-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      width: 100%;
+      padding: 50px 20px;
+      @include typo_collapse;
+    }
     ul {
-      width: 550px;
-      height: 156px;
+      width: 100%;
+      padding: 50px 20px;
       list-style-type: none;
-      padding: 0;
-      @include typo_collapse
+      @include typo_collapse;
     }
   }
-  &--close {
+
+  &__close {
     /* .dropdown-close */
-    width: 582px;
+
+    width: 100%;
     height: 52px;
-    left: 675px;
     border-radius: 10px;
     background-color: $color-primary;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
+    transition: height 4s ease-in-out;
+
+    h3 {
+      /* Équipements */
+      font-weight: 500;
+      font-size: 18px;
+      /* identical to box height, or 26px */
+      color: $color-secondary;
+      background-color: $color-primary;
+    }
   }
-  h3 {
-    /* Équipements */
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142.6%;
-    /* identical to box height, or 26px */
-    color: $color-secondary;
-    background-color: $color-primary;
-  }
+
   &__button {
     background: transparent;
     border: none;
+
+    &:focus img {
+      animation: rotation-0 1s ease-out forwards;
+    }
+
+    &--open {
+      background: transparent;
+      border: none;
+      &:focus img {
+        animation: rotation-180 1s ease-out forwards;
+      }
+    }
   }
 }
 .house-equipments {

@@ -14,22 +14,18 @@ const Carrousel = ({ pictures, title }) => {
   return (
     <div className="carrousel">
       <div className="carrousel__arrow">
-        <div className="carrousel__arrow--back">
-          <button
-            className="carrousel__vector"
-            onClick={() => setIndexPicture(indexPreviousPicture)}
-          >
-            <img src={VectorBack} alt="Image précédente" />
-          </button>
-        </div>
-        <div className= "carrousel__arrow--foward">
-          <button
-            className="carrousel__vector"
-            onClick={() => setIndexPicture(indexNextPicture)}
-          >
-            <img src={VectorForward} alt="Image suivante" />
-          </button>
-        </div>
+        <button
+          className="carrousel__vector"
+          onClick={() => setIndexPicture(indexPreviousPicture)}
+        >
+          <img src={VectorBack} alt="Image précédente" />
+        </button>
+        <button
+          className="carrousel__vector"
+          onClick={() => setIndexPicture(indexNextPicture)}
+        >
+          <img src={VectorForward} alt="Image suivante" />
+        </button>
       </div>
       <img
         className="carrousel__pictures"

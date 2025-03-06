@@ -1,3 +1,8 @@
-$color-primary :#FF6060;
-$color-secondary :#FFFFFF;
-$background-gray :#F6F6F6; 
+$color-primary: #ff6060;
+$color-secondary: #ffffff;
+$background-gray: #f6f6f6;
+
+$breakpoints: (
+  "mobile": 768px,
+  "desktop": 992px,
+);

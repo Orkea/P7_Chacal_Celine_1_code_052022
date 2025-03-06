@@ -9,13 +9,12 @@ const A_Propos = () => {
       <Banner>
         <img src={AProposPicture} className="banner__img" />
       </Banner>
-      <div className="dropdownlarge">
+      
         {ApTheme.map((item, index) => (
           <div key={`${item}-${index}`}>
-            <Collapse element={item.text} title={item.title} />
+            <Collapse element={item.text} title={item.title} className="dropdownlarge"/>
           </div>
         ))}
-      </div>
     </div>
   )
 }

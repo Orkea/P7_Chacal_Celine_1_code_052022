@@ -1,4 +1,5 @@
 import logo from "../assets/logo-blanc.svg"
+
 const Footer = () => {
   return (
     <>

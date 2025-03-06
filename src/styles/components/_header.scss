@@ -5,6 +5,13 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 150px;
+  
+  img{
+    @include mobile {
+      width: 145px;
+      height: 47px;
+    }
+  }
 
   &__navbar {
     /* _Nav */
@@ -12,11 +19,13 @@
     justify-content: space-between;
     align-items: center;
     width: 309px;
+    @include mobile {
+      width: 140px;
+    }
   
   }
 
   &__link {
-    color: $color-primary;
     @include navlink;
   }
   &__accueil {

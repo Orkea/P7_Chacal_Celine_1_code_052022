@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import Carrousel from "./Carrousel"
 import Collapse from "./Collapse"
+import HouseRating from "./HouseRating"
 
 const House = ({
   title,
@@ -17,12 +18,13 @@ const House = ({
   const lastName = identity[1]
 
   return (
-    <main>
+    <main className="house">
       <Carrousel pictures={pictures} title={title} />
       <div className="house__title">
         <h2>{title}</h2>
         <h3>{location}</h3>
       </div>
+     
       <div className="house-content">
         <div className="house-content__tags">
           {tags.map((tag, index) => (
@@ -32,22 +34,30 @@ const House = ({
           ))}
         </div>
         <div className="house-content__collapse">
-          <Collapse element={description} title="Description" />
-          <Collapse element={equipments} title="Equipements" />
+          <Collapse
+            element={description}
+            title="Description"
+            className="dropdown"
+          />
+          <Collapse
+            element={equipments}
+            title="Equipements"
+            className="dropdown"
+          />
         </div>
+        <aside className="house-aside">
+          <div className="house-aside__host">
+            <p>
+              {firstName} <br />
+              {lastName}
+            </p>
+            <img src={host.picture} alt={host.name} />
+          </div>
+          <div className="house-rating">
+            <HouseRating rating={rating} />
+          </div>
+        </aside>
       </div>
-      <aside className="house-aside">
-        <div className="house-aside__host">
-          <p>
-            {firstName} <br />
-            {lastName}
-          </p>
-          <img src={host.picture} alt={host.name} />
-        </div>
-        <div className="house-rating">
-          <span>{rating}/5</span>
-        </div>
-      </aside>
     </main>
   )
 }

@@ -1,7 +1,7 @@
 .carrousel {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 415px;
   border-radius: 25px;
   overflow: hidden;
@@ -10,24 +10,17 @@
     /* arrow_back_ios-24px 1 */
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 96px;
+    width: 1240px;
     height: 119.64px;
-  
-
-    // &--back {
-    //   left: 0%;
-    //   right: 92.26%;
-    // }
-    &--foward {
-      left: 92.26%;
-      right: 0%;
-    }
+    padding: 0 20px;
   }
 
   &__vector {
     /* Vector */
+    width: 46.68px;
+    height: 79.2px;
     border: none;
     background: transparent;
 
@@ -44,21 +37,14 @@
     object-fit: cover;
   }
   &__pagination {
-    /* 1/4 */
     position: absolute;
-    width: 24px;
-    height: 32.4px;
-    top: 357.67px;
-    left: 607px;
-    font-family: "Montserrat";
+    top: 610px;
+   
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 142.6%;
     /* or 26px */
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
     color: #ffffff;
   }
 }
