@@ -16,5 +16,7 @@ body {
   margin: 40px auto;
    @include mobile {
     width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
    }
 }

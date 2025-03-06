@@ -4,6 +4,9 @@
 .main-container {
   @include flex_column;
   gap: 200px;
+  @include mobile {
+    gap: 50px;
+  }
 }
 
 .banner__text {
@@ -11,6 +14,11 @@
   z-index: 1;
   width: 705px;
   height: 68px;
+  @include mobile {
+    width: 217px;
+    height: 48px;
+    margin-left: 36px;
+  }
 }
 
 h1 {
@@ -20,8 +28,9 @@ h1 {
   font-size: 48px;
   line-height: 142.6%;
   margin: 0;
-  // /* or 68px */
-  // display: flex;
-  // align-items: flex-end;
   color: $color-secondary;
+  @include mobile {
+    font-size: 24px;
+    line-height: 100%;
+  }
 }

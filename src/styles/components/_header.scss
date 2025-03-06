@@ -5,6 +5,9 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 150px;
+  @include mobile {
+    margin-bottom: 20px;
+  }
   
   img{
     @include mobile {
@@ -27,23 +30,29 @@
 
   &__link {
     @include navlink;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
   &__accueil {
     /* Accueil */
     width: 136px;
     height: 34px;
     text-align: right;
-
-    // /* or 34px */
-    // display: flex;
-    // align-items: flex-end;
-    // text-align: right;
-    // text-decoration-line: underline;
+    @include mobile {
+      width: 59px;
+      height: 17px;
+    }
   }
   &__a_propos {
     /* A Propos */
     width: 116px;
     height: 34px;
+    @include mobile {
+      width: 71px;
+      height: 17px;
+    }
 
     // /* or 34px */
     // display: flex;
