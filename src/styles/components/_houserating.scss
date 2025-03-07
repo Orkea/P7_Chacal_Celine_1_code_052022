@@ -1,0 +1,11 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.house-rating{
+    img {
+      @include mobile {
+        width: 18px;
+        height: 18px;
+      }
+    }
+}

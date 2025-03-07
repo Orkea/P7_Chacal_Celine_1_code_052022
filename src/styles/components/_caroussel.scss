@@ -1,3 +1,6 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
 .carrousel {
   display: flex;
   justify-content: center;
@@ -5,16 +8,20 @@
   height: 415px;
   border-radius: 25px;
   overflow: hidden;
+  @include mobile {
+    height: 255px;
+  }
 
   &__arrow {
-    /* arrow_back_ios-24px 1 */
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 1240px;
-    height: 119.64px;
     padding: 0 20px;
+    @include mobile {
+      width: 335px;
+    }
   }
 
   &__vector {
@@ -23,6 +30,10 @@
     height: 79.2px;
     border: none;
     background: transparent;
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
 
     img {
       width: 100%;
@@ -39,12 +50,12 @@
   &__pagination {
     position: absolute;
     top: 610px;
-   
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 142.6%;
-    /* or 26px */
-    color: #ffffff;
+    color: $color-secondary;
+    @include mobile {
+      display: none;
+    }
   }
 }

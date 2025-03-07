@@ -9,11 +9,17 @@
   max-height: 52px;
   border-radius: 10px;
   transition: max-height 4s ease-in-out;
+  @include mobile {
+    width: 100%;
+  }
 
   &--open {
     width: 582px;
     max-height: 500px;
     transition: max-height 4s ease-in-out;
+    @include mobile {
+      width: 100%;
+    }
   }
   &__text {
     position: relative;
@@ -29,18 +35,22 @@
       width: 100%;
       padding: 50px 20px;
       @include typo_collapse;
+      @include mobile {
+        padding: 20px 10px 0 10px;
+      }
     }
     ul {
       width: 100%;
       padding: 50px 20px;
       list-style-type: none;
       @include typo_collapse;
+      @include mobile {
+        padding: 20px 10px 0 10px;
+      }
     }
   }
 
   &__close {
-    /* .dropdown-close */
-
     width: 100%;
     height: 52px;
     border-radius: 10px;
@@ -52,18 +62,24 @@
     transition: height 4s ease-in-out;
 
     h3 {
-      /* Équipements */
       font-weight: 500;
       font-size: 18px;
-      /* identical to box height, or 26px */
       color: $color-secondary;
       background-color: $color-primary;
+      @include mobile {
+        font-size: 13px;
+      }
     }
   }
 
   &__button {
     background: transparent;
     border: none;
+    @include mobile {
+      img {
+        width: 16px;
+      }
+    }
 
     &:focus img {
       animation: rotation-0 1s ease-out forwards;
@@ -72,6 +88,11 @@
     &--open {
       background: transparent;
       border: none;
+      @include mobile {
+        img {
+          width: 16px;
+        }
+      }
       &:focus img {
         animation: rotation-180 1s ease-out forwards;
       }

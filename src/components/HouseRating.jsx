@@ -6,7 +6,7 @@ const HouseRating = ({rating}) => {
     const range = [1, 2, 3, 4, 5]
 
   return (
-    <div>
+    <div className="house-rating">
         {range.map((rangeElem) =>
             rating >= rangeElem ? 
             <img key={rangeElem.toString()} src = {StarActive} alt="star active" />

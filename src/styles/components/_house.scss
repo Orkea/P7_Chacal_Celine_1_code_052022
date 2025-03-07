@@ -1,12 +1,19 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 .house {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  @include mobile {
+    gap: 20px;
+  }
 
   &__title {
     height: 77px;
+    @include mobile {
+      height: 73px;
+    }
     h2 {
       height: 51px;
       margin: 0;
@@ -16,6 +23,10 @@
       font-weight: 500;
       line-height: 51.34px;
       text-align: left;
+      @include mobile {
+        font-size: 18px;
+        line-height: 143%;
+      }
     }
     h3 {
       height: 26px;
@@ -24,8 +35,10 @@
       font-weight: 500;
       line-height: 25.67px;
       text-align: left;
-      /* identical to box height, or 26px */
       color: $color-primary;
+      @include mobile {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -37,6 +50,9 @@
   &__tags {
     display: flex;
     flex-direction: row;
+    @include mobile {
+      flex-wrap: wrap;
+    }
     &--item {
       display: flex;
       align-items: center;
@@ -50,12 +66,19 @@
       span {
         display: block;
         margin: 0 30px;
+        @include mobile {
+          font-size: 10px;
+        }
       }
     }
   }
   &__collapse {
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }
 
@@ -66,12 +89,24 @@
   position: absolute;
   top: 735px;
   right: 150px;
-  
+  @include mobile {
+    position: static;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
   &__host {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 40px;
+    @include mobile {
+      width: 135px;
+      margin-bottom: 0;
+      justify-content: right;
+    }
     p {
       margin: 0;
       text-align: right;
@@ -79,11 +114,20 @@
       font-weight: 500;
       line-height: 25.67px;
       color: $color-primary;
+      @include mobile {
+        font-size: 12px;
+        line-height: 143%;
+        margin-right: 10px;
+      }
     }
     img {
       width: 64px;
       height: 64px;
       border-radius: 50%;
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }

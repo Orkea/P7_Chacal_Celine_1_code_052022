@@ -33,18 +33,6 @@ const House = ({
             </div>
           ))}
         </div>
-        <div className="house-content__collapse">
-          <Collapse
-            element={description}
-            title="Description"
-            className="dropdown"
-          />
-          <Collapse
-            element={equipments}
-            title="Equipements"
-            className="dropdown"
-          />
-        </div>
         <aside className="house-aside">
           <div className="house-aside__host">
             <p>
@@ -57,6 +45,18 @@ const House = ({
             <HouseRating rating={rating} />
           </div>
         </aside>
+        <div className="house-content__collapse">
+          <Collapse
+            element={description}
+            title="Description"
+            className="dropdown"
+          />
+          <Collapse
+            element={equipments}
+            title="Equipements"
+            className="dropdown"
+          />
+        </div>
       </div>
     </main>
   )
