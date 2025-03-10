@@ -6,7 +6,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 200px 0 100px;
+  margin-top: 100px;
+
+  &__404 {
+    font-size: 288px;
+    font-weight: 700;
+    margin: 0;
+    color: $color-primary;
+    @include mobile {
+      font-size: 96px;
+    }
+  }
 
   &__text {
     font-weight: 500;
@@ -14,10 +24,21 @@
     line-height: 51.34px;
     color: $color-primary;
     margin-bottom: 300px;
+    @include mobile {
+      width: 260px;
+      height: 52px;
+      font-size: 18px;
+      line-height: 143%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
   }
 
   &__link {
     @include navlink;
     text-decoration: underline;
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }

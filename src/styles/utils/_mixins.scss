@@ -24,20 +24,21 @@
   font-weight: 500;
   font-size: 48px;
   line-height: 142.6%;
-  /* or 68px */
-  // display: flex;
-  // align-items: flex-end;
-
   color: $color-secondary;
 }
 
-@mixin typo_collapse {
+@mixin typo_house {
   font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+}
+@mixin typo_collapse {
+  font-size: 24px;
   font-weight: 400;
   line-height: 25.67px;
   color: $color-primary;
   @include mobile {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 143%;
   }
 }

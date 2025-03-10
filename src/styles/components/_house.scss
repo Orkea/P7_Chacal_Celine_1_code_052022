@@ -6,19 +6,37 @@
   flex-direction: column;
   gap: 50px;
   @include mobile {
-    gap: 20px;
+    gap: 10px;
   }
+}
 
-  &__title {
-    height: 77px;
+.house-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @include mobile {
+    gap: $gap20;
+  }
+  &__title-aside {
+    display: flex;
+    justify-content: space-between;
     @include mobile {
-      height: 73px;
+      flex-direction: column;
+      gap: $gap20;
     }
+  }
+  &__title-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include mobile {
+      gap: $gap20;
+    }
+  }
+  &__title {
     h2 {
-      height: 51px;
       margin: 0;
       color: $color-primary;
-      font-family: Montserrat;
       font-size: 36px;
       font-weight: 500;
       line-height: 51.34px;
@@ -31,22 +49,14 @@
     h3 {
       height: 26px;
       margin: 0;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 25.67px;
       text-align: left;
       color: $color-primary;
+      @include typo_house;
       @include mobile {
         font-size: 14px;
       }
     }
   }
-}
-
-.house-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   &__tags {
     display: flex;
     flex-direction: row;
@@ -59,15 +69,19 @@
       justify-content: center;
       height: 25px;
       border-radius: 10px;
-      margin: 0 10px 10px 0;
+      margin-right: 10px;
       padding: 5px;
       color: $color-secondary;
       background-color: $color-primary;
+      @include mobile {
+        height: 18px;
+      }
       span {
         display: block;
         margin: 0 30px;
         @include mobile {
           font-size: 10px;
+          margin: 0 10px;
         }
       }
     }
@@ -77,7 +91,7 @@
     justify-content: space-between;
     @include mobile {
       flex-direction: column;
-      gap: 20px;
+      gap: $gap20;
     }
   }
 }
@@ -85,12 +99,10 @@
 .house-aside {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 196px;
-  position: absolute;
-  top: 735px;
-  right: 150px;
+
   @include mobile {
-    position: static;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
@@ -100,20 +112,17 @@
   &__host {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 40px;
+    justify-content: space-between;
     @include mobile {
       width: 135px;
       margin-bottom: 0;
       justify-content: right;
     }
     p {
-      margin: 0;
+      margin: 0 0 0 55px;
       text-align: right;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 25.67px;
       color: $color-primary;
+      @include typo_house;
       @include mobile {
         font-size: 12px;
         line-height: 143%;
