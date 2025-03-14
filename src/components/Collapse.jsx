@@ -4,39 +4,39 @@ import PropTypes from "prop-types"
 import VectorDown from "../assets/vector-down.png"
 
 const Collapse = ({ element, title, className }) => {
-  const [isOpen, setIsOpen ]= useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className={`${className}${isOpen ? "--open" : ""}`}>
-        <div className="dropdown__close">
-          <h3>{title}</h3>
-          <button
-            className={`dropdown__button${isOpen ? "--open" : ""}`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <img src={VectorDown} alt="Fleche vers le bas" />
-            {/* {isOpen ? (
+    <div
+      className={isOpen ? `${className} ${className}--open` : `${className}`}
+    >
+      <div className="dropdown__close">
+        <h3>{title}</h3>
+        <button
+          className={`dropdown__button  ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <img src={VectorDown} alt="Fleche vers le bas" />
+          
+         
+          {/* {isOpen ? (
               <img src={VectorUp} alt="Fleche vers le haut" />
             ) : (
               <img src={VectorDown} alt="Fleche vers le bas" />
             )} */}
-          </button>
-        </div>
-
-        {isOpen &&
-        (Array.isArray(element) ? (
-          <div className="dropdown__text">
-          <ul>
-            {element.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-          </div>
-        ) : (
-          <div className="dropdown__text">
+            
+        </button>
+      </div>
+      <div className="dropdown__text">
+        {(Array.isArray(element) ? (
+            <ul>
+              {element.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : (
             <p>{element}</p>
-          </div>
-        ))}
-      
+          ))}
+      </div>
     </div>
   )
 }

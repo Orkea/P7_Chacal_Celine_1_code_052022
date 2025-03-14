@@ -13,18 +13,17 @@
   width: 1023px;
   max-height:52px ;
   margin-top: 50px;
+  overflow: hidden;
+  transition: max-height 4s ease-in-out;
   @include mobile {
-    width: 335px;
+    width: 100%;
     margin-top: 20px;
   }
   
   &--open{
-    margin-top: 50px;
-    width: 1023px;
-    max-height: 500px;
-    transition: max-height 4s ease-in-out;
+      max-height: 500px;
     @include mobile {
-      width: 335px;
+      width: 100%;
       margin-top: 20px;
     }
   }

@@ -5,22 +5,24 @@
 .dropdown {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   width: 582px;
   max-height: 52px;
   border-radius: 10px;
   transition: max-height 4s ease-in-out;
   @include mobile {
     width: 100%;
+    max-height: 30px ;
   }
 
-  &--open {
-    width: 582px;
+
+   &--open {
     max-height: 500px;
-    transition: max-height 4s ease-in-out;
     @include mobile {
       width: 100%;
     }
   }
+
   &__text {
     position: relative;
     top: -10px;
@@ -30,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     p {
       width: 100%;
       padding: 50px 20px;
@@ -59,7 +61,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    transition: height 4s ease-in-out;
     @include mobile {
       height: 30px;
     }
@@ -78,17 +79,17 @@
   &__button {
     background: transparent;
     border: none;
+    cursor: pointer;
     @include mobile {
       img {
         width: 16px;
       }
     }
+    // &:focus img {
+    //   animation: rotation-0 4s ease-out forwards;
+    // }
 
-    &:focus img {
-      animation: rotation-0 1s ease-out forwards;
-    }
-
-    &--open {
+    &.open {
       background: transparent;
       border: none;
       @include mobile {
@@ -97,7 +98,10 @@
         }
       }
       &:focus img {
-        animation: rotation-180 1s ease-out forwards;
+        animation: rotation-180 2s ease-out forwards;
+      }
+      &:not(:focus) img {
+        animation: none;
       }
     }
   }
