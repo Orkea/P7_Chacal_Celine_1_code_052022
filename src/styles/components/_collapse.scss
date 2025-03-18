@@ -9,14 +9,13 @@
   width: 582px;
   max-height: 52px;
   border-radius: 10px;
-  transition: max-height 4s ease-in-out;
+  transition: max-height 3s ease-in-out;
   @include mobile {
     width: 100%;
-    max-height: 30px ;
+    max-height: 30px;
   }
 
-
-   &--open {
+  &.open {
     max-height: 500px;
     @include mobile {
       width: 100%;
@@ -32,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     p {
       width: 100%;
       padding: 50px 20px;
@@ -67,7 +66,7 @@
 
     h3 {
       font-weight: 500;
-      font-size: 24px;
+      font-size: 18px;
       color: $color-secondary;
       background-color: $color-primary;
       @include mobile {
@@ -80,32 +79,18 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    transition: transform 2s ease-out;
     @include mobile {
       img {
         width: 16px;
       }
     }
-    // &:focus img {
-    //   animation: rotation-0 4s ease-out forwards;
-    // }
-
     &.open {
-      background: transparent;
-      border: none;
-      @include mobile {
-        img {
-          width: 16px;
-        }
-      }
-      &:focus img {
-        animation: rotation-180 2s ease-out forwards;
-      }
-      &:not(:focus) img {
-        animation: none;
-      }
+      transform: rotate(180deg);
     }
   }
 }
+
 .house-equipments {
   position: absolute;
   width: 1240px;
@@ -115,3 +100,13 @@
   gap: 0px;
   opacity: 0px;
 }
+
+// .animated {
+//   &.open {
+//     animation: rotate-0 4s ease-out forwards;
+//   }
+
+//   &.close {
+//     animation: rotate-180 4s ease-out forwards;
+//   }
+// }

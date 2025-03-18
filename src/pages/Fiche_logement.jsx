@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Loader from "../components/Loader"
 import House from "../components/House"
+import Error from "./Error.jsx"
 
 const Fiche_logement = () => {
   const { id } = useParams()
@@ -14,13 +15,8 @@ const Fiche_logement = () => {
         const res = await fetch(`http://localhost:5173/src/data/logements.json`)
         const houses = await res.json()
 
-        console.log(
-          "DATA de la response de l'API  ____Stocker dans HOUSES",
-          houses
-        )
         // /* On filter pour trouver les info du logement passer en useParams*/
-        // const filteredData = housesData.find((house) => house.id === id)
-        //
+
         setHouses(houses)
       } catch (error) {
         console.log("Erreur fecthing data", error)
@@ -34,6 +30,16 @@ const Fiche_logement = () => {
   // On filter pour trouver les info du logement passer en useParams
   const house = houses.find((house) => house.id === id)
   console.log("DATA pour un logement", house)
+
+  //Si house n'existe pas on affiche une page d'erreur // 
+  if (!house) {
+    return (
+      <div>
+        <Error />
+      </div>
+    )
+  }
+  else
   return (
     <>
       {isloading ? (

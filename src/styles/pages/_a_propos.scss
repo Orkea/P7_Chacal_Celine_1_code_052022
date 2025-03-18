@@ -20,7 +20,7 @@
     margin-top: 20px;
   }
   
-  &--open{
+  &.open{
       max-height: 500px;
     @include mobile {
       width: 100%;

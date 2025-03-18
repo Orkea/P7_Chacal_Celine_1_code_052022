@@ -7,22 +7,15 @@ const Collapse = ({ element, title, className }) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div
-      className={isOpen ? `${className} ${className}--open` : `${className}`}
+      className={`${className} ${isOpen ? "open" : ""}`}
     >
       <div className="dropdown__close">
         <h3>{title}</h3>
         <button
-          className={`dropdown__button  ${isOpen ? "open" : ""}`}
+          className={`dropdown__button ${isOpen ? "open" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <img src={VectorDown} alt="Fleche vers le bas" />
-          
-         
-          {/* {isOpen ? (
-              <img src={VectorUp} alt="Fleche vers le haut" />
-            ) : (
-              <img src={VectorDown} alt="Fleche vers le bas" />
-            )} */}
             
         </button>
       </div>
