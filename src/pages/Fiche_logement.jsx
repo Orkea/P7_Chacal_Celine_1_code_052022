@@ -32,7 +32,7 @@ const Fiche_logement = () => {
   console.log("DATA pour un logement", house)
 
   //Si house n'existe pas on affiche une page d'erreur // 
-  if (!house) {
+  if (!house && !isloading) {
     return (
       <div>
         <Error />
@@ -43,7 +43,7 @@ const Fiche_logement = () => {
   return (
     <>
       {isloading ? (
-        <Loader />
+        <Loader loading={isloading} />
       ) : (
         <House
           title={house.title}

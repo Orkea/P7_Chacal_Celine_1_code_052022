@@ -35,7 +35,7 @@ const Collapse = ({ element, title, className }) => {
 }
 
 Collapse.propTypes = {
-  element: PropTypes.node.isRequired,
+  element: PropTypes.node,
   title: PropTypes.string.isRequired,
   className: PropTypes.string,
 }
