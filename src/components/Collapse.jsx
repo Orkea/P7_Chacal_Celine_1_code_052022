@@ -1,6 +1,5 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
-// import VectorUp from "../assets/vector-up.png"
 import VectorDown from "../assets/vector-down.png"
 
 const Collapse = ({ element, title, className }) => {

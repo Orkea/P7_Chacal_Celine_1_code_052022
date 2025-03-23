@@ -1,8 +1,6 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 
-
-
 .A-propos {
   display: flex;
   flex-direction: column;
@@ -11,17 +9,18 @@
 
 .dropdownlarge {
   width: 1023px;
-  max-height:52px ;
+  max-height: 52px;
   margin-top: 50px;
   overflow: hidden;
-  transition: max-height 4s ease-in-out;
+  transition: max-height 2s ease-in-out 0.5s;
   @include mobile {
     width: 100%;
-    margin-top: 20px;
+    max-height: 30px;
+    margin-top: 30px;
   }
-  
-  &.open{
-      max-height: 500px;
+
+  &.open {
+    max-height: 500px;
     @include mobile {
       width: 100%;
       margin-top: 20px;
@@ -29,19 +28,15 @@
   }
 
   p {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 34.22px;
-    color: $color-primary;
     margin: 0;
     padding: 50px 20px;
-    
+    @include typo_collapse_large;
   }
 
-  &__close{
-
-    h3 {
-      font-size: 24px;
+  h3 {
+    font-size:24px;
+    @include mobile {
+      font-size: 13px;
     }
   }
 }

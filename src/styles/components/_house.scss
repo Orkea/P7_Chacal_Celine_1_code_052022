@@ -39,11 +39,10 @@
       color: $color-primary;
       font-size: 36px;
       font-weight: 500;
-      line-height: 51.34px;
+      line-height: 143%;
       text-align: left;
       @include mobile {
         font-size: 18px;
-        line-height: 143%;
       }
     }
     h3 {
@@ -101,7 +100,6 @@
   flex-direction: column;
   justify-content: space-between;
   width: 196px;
-
   @include mobile {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -119,7 +117,7 @@
       justify-content: right;
     }
     p {
-      margin: 0 0 0 55px;
+      margin: 0 0 0 40px;
       text-align: right;
       color: $color-primary;
       @include typo_house;

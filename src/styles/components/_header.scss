@@ -8,8 +8,8 @@
   @include mobile {
     margin-bottom: 20px;
   }
-  
-  img{
+
+  img {
     @include mobile {
       width: 145px;
       height: 47px;
@@ -17,7 +17,6 @@
   }
 
   &__navbar {
-    /* _Nav */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,18 +24,15 @@
     @include mobile {
       width: 140px;
     }
-  
   }
 
   &__link {
     @include navlink;
-
     @include mobile {
       font-size: 12px;
     }
   }
   &__accueil {
-    /* Accueil */
     width: 136px;
     height: 34px;
     text-align: right;
@@ -46,17 +42,11 @@
     }
   }
   &__a_propos {
-    /* A Propos */
     width: 116px;
     height: 34px;
     @include mobile {
       width: 71px;
       height: 17px;
     }
-
-    // /* or 34px */
-    // display: flex;
-    // align-items: flex-end;
-    // text-align: right;
   }
 }
