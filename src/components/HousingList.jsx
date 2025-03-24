@@ -6,8 +6,8 @@ const HousingList = () => {
   return (
     <div className="gallery">
       <div className="gallery__container">
-      {houses.map((house, index) => (
-        <Link to={`/fiche_logement/${house.id}`} key={`${house}${index}`} className="gallery__link">
+      {houses.map((house) => (
+        <Link to={`/fiche_logement/${house.id}`} key={`${house.id}`} className="gallery__link">
           <div className="gallery-card">
             <img src={house.cover} alt={house.title} className="gallery-card__img"/>
             <p className="gallery-card__title">{house.title}</p>

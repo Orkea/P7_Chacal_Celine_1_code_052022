@@ -5,9 +5,7 @@ import VectorDown from "../assets/vector-down.png"
 const Collapse = ({ element, title, className }) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div
-      className={`${className} ${isOpen ? "open" : ""}`}
-    >
+    <div className={`${className} ${isOpen ? "open" : ""}`}>
       <div className="dropdown__close">
         <h3>{title}</h3>
         <button

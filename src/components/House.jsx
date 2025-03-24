@@ -66,6 +66,7 @@ const House = ({
     </main>
   )
 }
+
 House.propTypes = {
   title: PropTypes.string.isRequired,
   pictures: PropTypes.array,
