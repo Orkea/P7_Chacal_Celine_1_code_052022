@@ -17,15 +17,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1240px;
-    padding: 0 20px;
-    @include mobile {
-      width: 100%;
-    }
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 25px;
   }
 
   &__vector {
-    /* Vector */
     width: 46.68px;
     height: 79.2px;
     border: none;
@@ -50,7 +47,6 @@
   &__pagination {
     position: absolute;
     top: 610px;
-    font-style: normal;
     font-weight: 500;
     font-size: 18px;
     color: $color-secondary;

@@ -13,11 +13,11 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 1240px;
-  margin: 50px auto 150px;
+  max-width: 1240px;
+  margin: 50px auto 100px;
+  padding: 0 20px;
    @include mobile {
     width: 100%;
     margin: 20px auto 45px;
-    padding: 0 10px;
    }
 }

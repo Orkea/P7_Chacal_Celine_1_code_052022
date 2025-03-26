@@ -6,7 +6,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 66px 464px 29px 463px;
   background: #000000;
   @include mobile {
     padding: 0;
@@ -23,7 +22,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 513px;
+
     height: 46px;
     color: #ffffff;
   }

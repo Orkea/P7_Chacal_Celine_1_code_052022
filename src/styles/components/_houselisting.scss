@@ -2,20 +2,20 @@
 @use "../utils/mixins" as *;
 
 .gallery {
- 
   background: $background-gray;
   border-radius: 25px;
   padding: 40px;
+  display: flex;
+  justify-content: center;
   @include mobile {
     background: none;
-    padding: 0;
   }
 
   &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
     border-radius: 25px;
   }
 
@@ -23,11 +23,6 @@
     border-radius: 25px;
     width: 340px;
     height: 340px;
-    margin: 10px;
-    @include mobile {
-      margin:0;
-      width: 100%;
-    }
   }
 }
 .gallery-card {
@@ -38,7 +33,6 @@
   border-radius: 25px;
   display: flex;
   justify-content: center;
-
 
   &__img {
     width: 100%;

@@ -8,7 +8,7 @@
   overflow: hidden;
   width: 582px;
   max-height: 52px;
-  transition: max-height 2s ease-in-out 0.5s;
+  transition: max-height 1s ease-in-out;
   @include mobile {
     width: 100%;
     max-height: 30px;
@@ -70,7 +70,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: transform 2s ease-in-out 0.5s;
+    transition: transform 1s ease-in-out;
     @include mobile {
       img {
         width: 16px;
