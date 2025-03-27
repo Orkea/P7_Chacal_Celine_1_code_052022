@@ -1,5 +1,12 @@
 import logo from "../assets/logo-blanc.svg"
 
+/**
+ * Composant Footer - Pied de page de l'application
+ * 
+ * - Affiche un logo et un texte de copyright.
+ * 
+ */
+
 const Footer = () => {
   return (
     <>

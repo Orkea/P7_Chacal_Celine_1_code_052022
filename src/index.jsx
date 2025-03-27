@@ -3,12 +3,13 @@ import { StrictMode } from "react"
 /** Importation de createRoot * - Permet de créer une racine React optimisée pour le rendu concurrentiel */
 import { createRoot } from "react-dom/client"
 
-/** Importation du Router et des Routes depuis react-router-dom 
+/** Importation Router, Route, Routes depuis react-router-dom 
  * - Router : Gère la navigation et les différentes pages de l'application
  * - Route : Définit un chemin spécifique et le composant à afficher
  * - Routes : Conteneur pour regrouper plusieurs <Route>
  */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+
 /** Importation des styles globaux de l'application */
 import "./styles/index.scss"
 

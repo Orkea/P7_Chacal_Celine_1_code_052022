@@ -3,6 +3,13 @@ import Carrousel from "./Carrousel"
 import Collapse from "./Collapse"
 import HouseRating from "./HouseRating"
 
+/**
+ * Composant House - Page d'un logement spécifique
+ *
+ *  - Affiche les informations détaillées sur le logement.
+ *
+ */
+
 const House = ({
   title,
   pictures,
@@ -13,6 +20,7 @@ const House = ({
   equipments,
   tags,
 }) => {
+  /** Découpage du nom de l'hôte en prénom et nom */
   const identity = host.name.split(" ")
   const firstName = identity[0]
   const lastName = identity[1]
@@ -23,11 +31,13 @@ const House = ({
       <div className="house-content">
         <div className="house-content__title-aside">
           <div className="house-content__title-tags">
+            {/** Affichage du titre et de la localisation du logement */}
             <div className="house-content__title">
               <h2>{title}</h2>
               <h3>{location}</h3>
             </div>
             <div className="house-content__tags">
+              {/** Parcours du tableau des tags et affichage sous forme de span  */}
               {tags.map((tag, index) => (
                 <div
                   key={`${tag}-${index}`}
@@ -38,6 +48,7 @@ const House = ({
               ))}
             </div>
           </div>
+          {/** Affichage des informations sur l'hôte */}
           <aside className="house-aside">
             <div className="house-aside__host">
               <p>
@@ -46,10 +57,11 @@ const House = ({
               </p>
               <img src={host.picture} alt={host.name} />
             </div>
-              <HouseRating rating={rating} />
-            
+            {/** Affichage de la notation du logement */}
+            <HouseRating rating={rating} />
           </aside>
         </div>
+        {/** Composant collapsibles pour la description et les équipements d'un logement */}
         <div className="house-content__collapse">
           <Collapse
             element={description}

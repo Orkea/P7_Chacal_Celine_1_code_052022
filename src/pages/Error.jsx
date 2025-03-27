@@ -1,4 +1,11 @@
 import { Link } from "react-router-dom"
+
+/**
+ * Composant Error - Page d'erreur 404
+ * 
+ * - Affiché lorsque l'utilisateur tente d'accéder à une page qui n'existe pas.
+ * 
+ */
 const Error = () => {
   return (
     <div className="error">

@@ -3,6 +3,13 @@ import Banner from "../components/Banner"
 import AProposPicture from "../assets/A_Propos-picture.png"
 import ApTheme from "../data/a_propos.json"
 
+/**
+ * Composant A_Propos - Page "À Propos" de l'application
+ * 
+ *  - Affiche une bannière et une série de composant (collapsibles) contenant des informations sur l'application.
+ * 
+ */
+
 const A_Propos = () => {
   return (
     <div className="A-propos">
