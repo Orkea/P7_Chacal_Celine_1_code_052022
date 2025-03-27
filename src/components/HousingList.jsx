@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-import houses from "../data/logements.json"
+import { useEffect, useState } from "react"
+// import houses from "../data/logements.json"
 
 /** Composant HousingList 
  * 
@@ -8,6 +9,29 @@ import houses from "../data/logements.json"
  */
 
 const HousingList = () => {
+ // State pour stocker les logements récupérés
+ const [houses, setHouses] = useState([])
+
+ useEffect(() => {
+  /** fonction asynchrone pour récupérer les données des logements */
+  const fetchHouse = async () => {
+    try {
+      /** Appel pour récupérer les logements à partir du fichier JSON local */
+      const res = await fetch('/data/logements.json')
+      /** '/data/logements.json'  _  http://localhost:5173/src/data/logements.json */
+      const houses = await res.json()
+      /** Mise à jour de l'état avec les données récupérées */
+      setHouses(houses)
+    } 
+    catch (error) {
+      /** Gestion des erreurs si l'appel échoue */
+      console.log("Erreur fecthing data", error)
+    } 
+  
+  }
+  /** Appel de la fonction pour charger les données */
+  fetchHouse()
+}, [])
   return (
     <div className="gallery">
       <div className="gallery__container">

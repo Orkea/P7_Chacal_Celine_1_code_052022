@@ -23,8 +23,8 @@ const Fiche_logement = () => {
     const fetchHouse = async () => {
       try {
         /** Appel pour récupérer les logements à partir du fichier JSON local */
-        const res = await fetch('http://localhost:5173/src/data/logements.json')
-        /** '/data/logements.json'  _  http://localhost:5173/src/data/logements.json */
+        const res = await fetch('/data/logements.json')
+        
         const houses = await res.json()
         /** Mise à jour de l'état avec les données récupérées */
         setHouses(houses)
